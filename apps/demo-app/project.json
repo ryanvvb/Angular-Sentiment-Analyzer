@@ -7,12 +7,14 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
+      "dependsOn": ["^build"],
+      "executor": "@nx/angular:browser-esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "plugins": ["apps/demo-app/plugins/env-var-plugin.js"],
         "outputPath": "dist/apps/demo-app",
         "index": "apps/demo-app/src/index.html",
-        "browser": "apps/demo-app/src/main.ts",
+        "main": "apps/demo-app/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/demo-app/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
@@ -50,7 +52,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nx/angular:dev-server",
       "configurations": {
         "production": {
           "buildTarget": "demo-app:build:production"

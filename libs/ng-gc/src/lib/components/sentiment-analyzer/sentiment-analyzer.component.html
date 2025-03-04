@@ -1,0 +1,6 @@
+<!-- Display the sentiment only if the user types somethign and if the loading flag isnt set -->
+@if(sentiment() && !loading()){
+  <p>{{ sentiment()?.sentiment }} {{ sentiment()?.emoji }}</p>
+} @else if (loading()) {
+  <p>Loading...</p>
+}
