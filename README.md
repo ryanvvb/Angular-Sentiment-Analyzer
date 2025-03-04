@@ -3,7 +3,7 @@
 *Positive Message Analysis*
 
 ![Negative Sentiment](negative_message.png)
-*Negative Message Analysis*
+*Negative Message Analysi*
 ## Use This Repo Locally
 
 To get started, clone the repository, run npm install from the root of this workspace, and then create a file named .env inside the apps/demo-app folder. Then add the following to it:
